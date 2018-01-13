@@ -100,15 +100,3 @@ function wpb_display_search() {
 		'after'  => '</button>',));
 }
 add_action( 'genesis_header','wpb_display_search',9 );
-
-//* Enqueue scripts and styles
-add_action( 'wp_enqueue_scripts', 'search_bar_script' );
-function search_bar_script() {
-	wp_enqueue_script( 'search_bar', get_bloginfo( 'stylesheet_directory' ) . '/js/search-bar.js', array( 'jquery' ), '1.0.0' );
-}
-
-//* Customize search form input box text
-add_filter( 'genesis_search_text', 'sp_search_text' );
-function sp_search_text( $text ) {
-	return esc_attr( 'START TYPING TO SEARCH...') ;
-}
