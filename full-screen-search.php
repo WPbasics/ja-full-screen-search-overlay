@@ -96,8 +96,8 @@ $full_screen_search = new Full_Screen_Search;
 //Display the Search Area  THIS IS JOSE AVILA CODE ********************************************************************
 function wpb_display_search() {
 	genesis_widget_area ( 'search', array(
-		'before' => '<div id="search-form-container">',
-		'after'  => '</div><button type="submit" class="icon-search"><i class="mglass fa fa-search"></i></button>',));
+		'before' => '<button type="submit" class="icon-search"><i class="mglass fa fa-search"></i>',
+		'after'  => '</button>',));
 }
 add_action( 'genesis_header','wpb_display_search',9 );
 
