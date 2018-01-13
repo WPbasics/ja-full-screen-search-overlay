@@ -69,7 +69,7 @@ class Full_Screen_Search {
 	/**
 	* Outputs the HTML markup for our Full Screen Search
 	* CSS hides this by default, and Javascript displays it when the user
-	* interacts with any WordPress search field
+	* interacts with the search icon in the header
 	*
 	* @since 1.0.0
 	*/
