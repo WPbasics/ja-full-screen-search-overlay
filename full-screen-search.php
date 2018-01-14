@@ -69,7 +69,7 @@ class Full_Screen_Search {
 	/**
 	* Outputs the HTML markup for our Full Screen Search
 	* CSS hides this by default, and Javascript displays it when the user
-	* interacts with the search icon in the header
+	* interacts with any WordPress search field
 	*
 	* @since 1.0.0
 	*/
@@ -81,7 +81,7 @@ class Full_Screen_Search {
             </button>
 			<form role="search" method="get" action="<?php echo home_url( '/' ); ?>" id="full-screen-search-form">
 				<div id="full-screen-search-container">
-					<input type="text" name="s" placeholder="<?php _e( 'Search' ); ?>" id="full-screen-search-input" />
+					<input type="text" name="s" placeholder="<?php _e( 'SEARCH WPBASICS' ); ?>" id="full-screen-search-input" />
 				</div>
 			</form>
 		</div>
@@ -99,4 +99,5 @@ function wpb_display_search() {
 		'before' => '<button type="submit" class="icon-search"><i class="mglass fa fa-search"></i>',
 		'after'  => '</button>',));
 }
-add_action( 'genesis_header','wpb_display_search',9 );
+add_action( 'genesis_header','wpb_display_search' );
+

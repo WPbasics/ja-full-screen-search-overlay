@@ -9,11 +9,13 @@ jQuery( document ).ready( function( $ ) {
         event.preventDefault();
 
         // Display the Full Screen Search
-        $( '#full-screen-search' ).addClass( 'open' );
+        $( '#full-screen-search' ).addClass( 'open' ).removeClass( 'close-overlay' );
 
         // Focus on the Full Screen Search Input Field
         $( '#full-screen-search input' ).focus();
     } );
+
+
 
     // Hide the Full Screen search when the user clicks the close button
     $( '#full-screen-search button.close' ).on( 'click', function( event ) {
@@ -21,7 +23,9 @@ jQuery( document ).ready( function( $ ) {
         event.preventDefault();
 
         // Hide the Full Screen Search
-        $( '#full-screen-search' ).removeClass( 'open' );
+        // $( '#full-screen-search' ).removeClass( 'open' );
+        $( '#full-screen-search' ).toggleClass( 'close-overlay' );
+
     } );
 
 } );
