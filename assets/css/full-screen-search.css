@@ -52,54 +52,27 @@
 * Background
 */
 #full-screen-search {
-    visibility: hidden;
-    opacity: 0;
+    visibility: visible;
+    position: fixed;
+    opacity: 1;
     z-index: 999998;
+    transform:translateY(-100%);
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    transform: translateY(-100%);
-    /*background: rgba(39, 39, 39, 1.0);*/
-    background: #222;
-
-
-    /**
-    * Add some CSS3 transitions for showing the Full Screen Search
-    */
-    /*transition: opacity 2.5s linear;*/
-    /*transition: transform 2.5s ease-in-out;*/
-
-
+    background: rgba(39, 39, 39, 0.95);
+    transition: all .5s ease-in-out;
 }
 
 /**
 * Display Full Screen Search when Open
 */
 #full-screen-search.open {
-    /**
-    * Because we're using visibility and opacity for CSS transition support,
-    * we define position: fixed; here so that the Full Screen Search doesn't block
-    * the underlying HTML elements when not open
-    */
-    position: fixed;
-    visibility: visible;
-    top:0;
-    left: 0;
-    opacity: 1;
-    transform: translateY(0%);
+    transform:translateY(0%);
     transition: transform .5s ease-in-out;
-
 }
 
-.close-overlay {
-    transform: translateY(-100%)!important;
-    /*position: unset;*/
-    /*height: 0;*/
-    /*visibility: hidden;*/
-    /*transition: transform 1.5s ease-in-out;*/
-    /*background: red;*/
-}
 
 /**
 * Search Form
