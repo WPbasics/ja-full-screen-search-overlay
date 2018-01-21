@@ -6,7 +6,6 @@
 * Author: WPBeginner
 * Author URI: https//www.wpbeginner.com/
 * Description: Displays a full screen search box when interacting with a WordPress Search Field or Widget
-* Modified version of the wpbeginner plugin
 */
 
 /**
@@ -76,15 +75,14 @@ class Full_Screen_Search {
 	function output_full_screen_search() {
 
 		?>
-		<div id="full-screen-search">
-			<button type="button" class="close" id="full-screen-search-close"><img src="<?php echo plugin_dir_url( __FILE__ ) . 'images/cross.png'; ?>">
-            </button>
-			<form role="search" method="get" action="<?php echo home_url( '/' ); ?>" id="full-screen-search-form">
-				<div id="full-screen-search-container">
-					<input type="text" name="s" placeholder="<?php _e( 'SEARCH WPBASICS' ); ?>" id="full-screen-search-input" />
-				</div>
-			</form>
-		</div>
+        <div id="fullscreensearch">
+            <div class="closesearch"><a href="#searchclose">X</a></div>
+            <form role="search" method="get" action="<?php echo home_url( '/' ); ?>" id="full-screen-search-form">
+                <input type="text"  placeholder="Search WP basics..." name="s" class="s search-input"
+                       autocomplete="off">
+                <input type="submit" class="searchsubmit search-submit" value="Search">
+            </form>
+        </div>
 		<?php
 
 	}
@@ -92,12 +90,3 @@ class Full_Screen_Search {
 }
 
 $full_screen_search = new Full_Screen_Search;
-
-//Display the Search Area  THIS IS JOSE AVILA CODE ********************************************************************
-function wpb_display_search() {
-	genesis_widget_area ( 'search', array(
-		'before' => '<button type="submit" class="icon-search"><i class="mglass fa fa-search"></i>',
-		'after'  => '</button>',));
-}
-add_action( 'genesis_header','wpb_display_search' );
-
